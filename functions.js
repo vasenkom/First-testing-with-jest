@@ -31,9 +31,19 @@ const calculator = {
 // A caesarCipher function that takes a string and a shift factor and returns it with each character “shifted”
 function caesarCipher() {}
 
+// An analyzeArray function that takes an array of numbers and returns an object with the following properties: average, min, max, and length
+function analyzeArray(array1) {
+  let average = array1.reduce((a, b) => a + b, 0) / array1.length;
+  let min = Math.min(...array1);
+  let max = Math.max(...array1);
+  let length = array1.length;
+  return { average, min, max, length };
+}
+
 module.exports = {
   myString,
   reversedString,
   calculator,
   caesarCipher,
+  analyzeArray,
 };
