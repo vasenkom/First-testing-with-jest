@@ -1,7 +1,39 @@
-// A capitalize function that takes a string and returns it with the first character capitalized
+// A function that takes a string and returns it with the first character capitalized
 function myString(string1) {
   let firstLetterCapitalize = string1.charAt(0).toUpperCase();
-  return firstLetterCapitalize;
+  let newString = firstLetterCapitalize + string1.slice(1);
+  return newString;
 }
 
-module.exports = myString;
+// A reversedString function that takes a string and returns it reversed
+function reversedString(string2) {
+  let reverseString = string2.split("").reverse().join("");
+  return reverseString;
+}
+
+// A calculator object that contains functions for the basic operations: add, subtract, divide, and multiply
+// Each of these functions should take two numbers and return the correct calculation
+const calculator = {
+  add: function (a, b) {
+    return a + b;
+  },
+  substract: function (a, b) {
+    return a - b;
+  },
+  multiply: function (a, b) {
+    return a * b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+};
+
+// A caesarCipher function that takes a string and a shift factor and returns it with each character “shifted”
+function caesarCipher() {}
+
+module.exports = {
+  myString,
+  reversedString,
+  calculator,
+  caesarCipher,
+};
