@@ -29,7 +29,12 @@ const calculator = {
 };
 
 // A caesarCipher function that takes a string and a shift factor and returns it with each character “shifted”
-function caesarCipher() {}
+function caesarCipher(string3, shiftFactor) {
+  return string3
+    .split("")
+    .map((char) => shiftChar(char, shiftFactor))
+    .join("");
+}
 
 // An analyzeArray function that takes an array of numbers and returns an object with the following properties: average, min, max, and length
 function analyzeArray(array1) {
@@ -38,6 +43,20 @@ function analyzeArray(array1) {
   let max = Math.max(...array1);
   let length = array1.length;
   return { average, min, max, length };
+}
+
+function shiftChar(char, shift) {
+  const isUpperCase = char >= "A" && char <= "Z";
+  const isLowerCase = char >= "a" && char <= "z";
+
+  if (isUpperCase || isLowerCase) {
+    const base = isUpperCase ? "A".charCodeAt(0) : "a".charCodeAt(0);
+    return String.fromCharCode(
+      ((((char.charCodeAt(0) - base + shift) % 26) + 26) % 26) + base
+    );
+  }
+
+  return char;
 }
 
 module.exports = {

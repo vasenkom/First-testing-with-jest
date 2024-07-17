@@ -24,6 +24,13 @@ test("test the calculation of calculator obj", () => {
   expect(calculator.divide(2, 1)).toBe(2);
 });
 
+// A test for a caesarCipher function that takes a string and a shift factor and returns it with each character “shifted”
+test("caesarCipher test", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
 // A test for a function that takes an array of numbers and returns an object with the following properties: average, min, max, and length
 test("test average, min, max, and length", () => {
   const result = analyzeArray([1, 8, 3, 4, 2, 6]);
